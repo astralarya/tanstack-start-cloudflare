@@ -1,8 +1,12 @@
-import { Outlet, createFileRoute } from '@tanstack/react-router'
+import { Outlet, createFileRoute } from "@tanstack/react-router";
+import { LoadSkiaWeb } from "@shopify/react-native-skia/src/web";
+import CanvasKitWasm from "node_modules/canvaskit-wasm/bin/full/canvaskit.wasm?url";
 
-export const Route = createFileRoute('/_pathlessLayout')({
+export const Route = createFileRoute("/_pathlessLayout")({
   component: LayoutComponent,
-})
+  ssr: false,
+  beforeLoad: () => LoadSkiaWeb({ locateFile: () => CanvasKitWasm }),
+});
 
 function LayoutComponent() {
   return (
@@ -12,5 +16,5 @@ function LayoutComponent() {
         <Outlet />
       </div>
     </div>
-  )
+  );
 }
