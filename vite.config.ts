@@ -69,7 +69,7 @@ export default defineConfig({
       start: { entry: "./start.tsx" },
       server: { entry: "./server.ts" },
     }),
-    // cloudflare(),
+    cloudflare(),
     viteReact(),
     tailwindcss(),
   ],
