@@ -1,5 +1,4 @@
 import { Link, Outlet, createFileRoute } from "@tanstack/react-router";
-// import * as foo from "../../components/card-back-texture";
 
 export const Route = createFileRoute("/_pathlessLayout/_nested-layout")({
   component: LayoutComponent,
