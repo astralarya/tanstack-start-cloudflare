@@ -64,12 +64,12 @@ export default defineConfig({
     tsConfigPaths({
       projects: ["./tsconfig.json"],
     }),
+    cloudflare({ viteEnvironment: { name: "ssr" } }),
     tanstackStart({
       srcDirectory: "src",
       start: { entry: "./start.tsx" },
       server: { entry: "./server.ts" },
     }),
-    cloudflare(),
     viteReact(),
     tailwindcss(),
   ],

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && tsc --noEmit",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "cf-typegen": "wrangler types --env-interface Env"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.13.7",

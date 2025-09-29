@@ -17,7 +17,7 @@
     "paths": {
       "~/*": ["./src/*"]
     },
-    "types": ["./src/shim.d.ts"],
+    "types": ["./src/shim.d.ts", "./worker-configuration.d.ts"],
     "noEmit": true
   }
 }
