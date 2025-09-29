@@ -1,7 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { Test } from '~/start'
+import { createFileRoute } from "@tanstack/react-router";
+import { cloudflareHello } from "~/components/cloudflareHello";
+import { Test } from "~/start";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   // server: {
   //   handlers: {
   //     GET: ({ context, next }) => {
@@ -63,15 +64,17 @@ export const Route = createFileRoute('/')({
   //   test: (test) => {},
   // },
   loader: () => {
-    return new Test('test')
+    return cloudflareHello();
   },
   component: Home,
-})
+});
 
 function Home() {
+  const data = Route.useLoaderData();
   return (
     <div className="p-2">
       <h3>Welcome Home!!!</h3>
+      {data}
     </div>
-  )
+  );
 }
