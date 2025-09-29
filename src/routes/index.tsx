@@ -65,6 +65,7 @@ export const Route = createFileRoute("/")({
   // },
   loader: () => {
     return cloudflareHello();
+    return "";
   },
   component: Home,
 });
